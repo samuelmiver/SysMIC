@@ -35,4 +35,15 @@ nodes = {'A' 'B' 'C'};
 g = biograph(m, nodes);
 view(g)
 
+% Other possible representations: equilibrium, radial...
+g.LayoutType = 'equilibrium';
+dolayout(g);
+view(g);
+
+% Example graph from matrix n:
+n=[0 1 0 0; 0 0 1 1; 0 0 0 0; 0 0 0 0];
+nodes = {'V' 'X' 'Y' 'Z'};
+g = biograph(n,nodes);
+view(g);
+
 
