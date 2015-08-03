@@ -46,4 +46,15 @@ nodes = {'V' 'X' 'Y' 'Z'};
 g = biograph(n,nodes);
 view(g);
 
-
+% Learning to change attributes
+m = [0 1 0; 0 0 1; 1 1 0];
+nodes = {'A' 'B' 'C'};
+g = biograph(m,nodes);
+g.LayoutType = 'equilibrium';
+dolayout(g);
+vg = view(g)
+% To explore its features que use:
+vg.nodes(1)
+% And to change them
+set(vg.nodes,'Shape','circle');
+set(vg.nodes,'Color',[1 0 0]);
