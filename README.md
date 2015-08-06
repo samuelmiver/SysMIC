@@ -1,2 +1,2 @@
 # SysMIC
-Scripts developed following the text book of SysMIC course in Systems Biology Textbook (http://sysmic.ac.uk/textbook/index.html)
+Scripts developed following the text book of SysMIC course in Systems Biology (http://sysmic.ac.uk/textbook/index.html)
