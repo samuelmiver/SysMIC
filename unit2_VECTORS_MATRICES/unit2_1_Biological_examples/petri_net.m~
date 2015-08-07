@@ -180,106 +180,11 @@ end
 % Again we have r = 9 and r_two = 0. We have a vector u = (1 2)T
 % representing we see 1 monomerisation and 2 dimerisations:
 
-W_sr = [0 1 ; 2 0];
-W_rs = [2 0 ; 0 1];
-
-A = W_rs - W_sr;
-
-S = A';
-
 m = [9 ; 0];
 u = [1 ; 2];
 
-mu = m + S*u % With this we obtain the resulting state after the three reactions given by u.
+S = m'
 
-% Exercise 1.1.6: Calculate the resulting state of the system if m = (221
-% 52)T and two different u's:
-
-m = [221 ; 52];
-
-% a
-u = [11 ; 23];
-
-mu = m + S*u
-
-% b
-u = [21 ; 17];
-mu = m + S*u
-
-% With some calculations you can easily retrieve the ste of reactions have
-% ocurred (u) from m(u)
+mu = m + S*u  % With this we obtain the resulting state after the three reactions given by u.
 
 
-%%%%
-% Invariants
-%%%%
-%The invariant (vector x) of a system, is defines as the solution to the
-%equation Sx = 0
-
-null(S, 'r')
-
-% This give us the number of reactions that leaves the number of species
-% unchanged
-
-%%%%
-% A PETRI NET MODEL FOR PROTEIN SYNTHESIS
-%%%%
-
-% Exercise 1.1.9:
-W_sr = [ 1 0 0; 0 1 0; 0 1 0; 0 0 1 ];
-W_rs = [ 0 1 0; 1 0 0; 0 1 1; 0 0 0 ];
-A=W_rs-W_sr;
-
-S = A'
-
-% Exercise 1.1.10:
-% Conservation law:
-null(A, 'r')
-% Invariants:
-null(S,'r')
-
-%%%%
-% MODELLING PLASMID REPLICATION
-%%%%
-
-W_sr = zeros(13,10);
-W_sr(1,1) = 1; W_sr(1,10) = 1;
-W_sr(2,2) = 1;
-W_sr(3,3) = 1;
-W_sr(4,3) = 1;
-W_sr(5,4) = 1;
-W_sr(6,2) = 1; W_sr(6,8) = 1;
-W_sr(7,6) = 1;
-W_sr(8,6) = 1;
-W_sr(9,5) = 1;
-W_sr(10,6) = 1; W_sr(10,9) = 1;
-W_sr(11,7) = 1;
-W_sr(12,7) = 1;
-W_sr(13,5) = 1;
-
-% Exercise 1.1.12
-W_rs = zeros(13,10);
-W_rs(1,2)=1;
-W_rs(2,3)=1;
-W_rs(3,[1 10])=1;
-W_rs(4,4)=1;
-W_rs(5,1)=2;
-W_rs(5,10)=1;
-W_rs(6,6)=1;
-W_rs(7,[2 8])=1;
-W_rs(8,[5])=1;
-W_rs(9,[6])=1;
-W_rs(10,[7])=1;
-W_rs(11,[6 9])=1;
-W_rs(12,[5 9])=1;
-W_rs(13,[1 8 10])=1;
-
-% Find S:
-A=W_rs-W_sr;
-
-S = A'
-
-% Conservation law:
-null(A, 'r')
-% Invariants:
-null(S,'r')
