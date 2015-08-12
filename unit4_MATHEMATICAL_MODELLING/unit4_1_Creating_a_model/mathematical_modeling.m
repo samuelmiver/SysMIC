@@ -6,10 +6,10 @@
 % ODEs representing (de)phosphorilation of the EpoR
 %%%
 
-% unphosphorylated EpoR
-dxdt(1)= - k1*x(1)*Epo + k2*x(2);
-% phosphorylated EpoR
-dxdt(2)=   k1*x(1)*Epo - k2*x(2);
+% % unphosphorylated EpoR
+% dxdt(1)= - k1*x(1)*Epo + k2*x(2);
+% % phosphorylated EpoR
+% dxdt(2)=   k1*x(1)*Epo - k2*x(2);
 
 
 %%%
